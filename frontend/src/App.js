@@ -12,11 +12,9 @@ const App = () => {
 	const [errorMessage, setErrorMessage] = useState('');
 
 	useEffect(() => {
-		axios
-			.get('https://secret-tundra-71870.herokuapp.com/api/notes')
-			.then((res) => {
-				setNotes(res.data);
-			});
+		axios.get('http://localhost:3001/api/notes').then((res) => {
+			setNotes(res.data);
+		});
 	}, []);
 
 	const addNote = (event) => {
